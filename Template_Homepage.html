@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<style>
+/* =========================
+   CUSTOMIZATION VARIABLES
+   ========================= */
+:root {
+  --bg-color: #0f172a;          /* Page background */
+  --banner-color: #020617;      /* Top banner */
+  --panel-overlay: rgba(0,0,0,0.55);
+  --text-color: #e5e7eb;
+  --accent-color: #38bdf8;
+
+  --banner-height: 120px;
+  --panel-height: 260px;
+  --panel-gap: 16px;
+
+  /* Background images (replace URLs) */
+  --img-syllabus: url("https://via.placeholder.com/800x600?text=Syllabus");
+  --img-labs: url("https://via.placeholder.com/800x600?text=Labs");
+  --img-homework: url("https://via.placeholder.com/800x600?text=Homework");
+  --img-contact: url("https://via.placeholder.com/800x600?text=Contact");
+}
+
+/* =========================
+   BASE STYLES
+   ========================= */
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   BANNER
+   ========================= */
+.course-banner {
+  height: var(--banner-height);
+  background-color: var(--banner-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.course-banner h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* =========================
+   PANEL ROW
+   ========================= */
+.panel-container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 16px;
+  display: flex;
+  gap: var(--panel-gap);
+}
+
+.panel {
+  flex: 1;
+  height: var(--panel-height);
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--panel-overlay);
+}
+
+.panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   PANEL CONTENT
+   ========================= */
+.panel-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.panel-title span {
+  padding: 10px 18px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 6px;
+  background: rgba(0,0,0,0.25);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 900px) {
+  .panel-container {
+    flex-direction: column;
+  }
+
+  .panel {
+    height: 220px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- =========================
+     TOP BANNER
+     ========================= -->
+<div class="course-banner">
+  <h1>ECE 3XXX – Course Title</h1>
+</div>
+
+<!-- =========================
+     CLICKABLE PANELS
+     ========================= -->
+<div class="panel-container">
+
+  <a class="panel" href="#" style="background-image: var(--img-syllabus);">
+    <div class="panel-title"><span>Syllabus</span></div>
+  </a>
+
+  <a class="panel" href="#" style="background-image: var(--img-labs);">
+    <div class="panel-title"><span>Labs</span></div>
+  </a>
+
+  <a class="panel" href="#" style="background-image: var(--img-homework);">
+    <div class="panel-title"><span>Homework</span></div>
+  </a>
+
+  <a class="panel" href="#" style="background-image: var(--img-contact);">
+    <div class="panel-title"><span>Contact</span></div>
+  </a>
+
+</div>
+
+</body>
+</html>
