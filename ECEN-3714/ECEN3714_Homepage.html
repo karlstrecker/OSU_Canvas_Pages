@@ -22,19 +22,21 @@
   --top-banner-color: #ffffff;
 
   /* Panel background colors (blue shades) */
+  --panel-color0: #ffffff; /* bright blue */
   --panel-color1: #f18239; /* bright blue */
   --panel-color2: #bc2600; /* medium blue */
   --panel-color3: #8f0000; /* darker blue */
   --panel-color4: #d05b21; /* dark blue */
 
   /* Panel images (optional) */
+  --panel-img0: url("OfficeHours.jpg");
   --panel-img1: url("syllabus.jpg");
   --panel-img2: url("labs.jpg");
   --panel-img3: url("homework.png");
   --panel-img4: url("grades.png");
 
   /* Bottom banner */
-  --bottom-banner-bg: #4c4c4c; /* medium blue */
+  --bottom-banner-bg: #325e6d; /* medium blue */
   --bottom-banner-color: #ffffff;
 }
 
@@ -77,7 +79,7 @@ body {
    PANEL STYLING
    ========================= */
 .panel {
-  flex: 1 1 calc(25% - 12px); /* 4 panels side by side minus gap */
+  flex: 1 1 calc(19% - 12px); /* 4 panels side by side minus gap */
   min-height: 220px;
   position: relative;
   border-radius: 10px;
@@ -98,7 +100,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.123);
+  background-color: rgba(0, 0, 0, 0.134);
   z-index: 0;
 }
 
@@ -124,6 +126,7 @@ body {
 }
 
 /* Panel background colors / images */
+/*.panel0 { background: var(--panel-img0) no-repeat center/cover, var(--panel-color0); }*/
 .panel1 { background: var(--panel-img1) no-repeat center/cover, var(--panel-color1); }
 .panel2 { background: var(--panel-img2) no-repeat center/cover, var(--panel-color2); }
 .panel3 { background: var(--panel-img3) no-repeat center/cover, var(--panel-color3); }
@@ -174,6 +177,13 @@ body {
      ========================= -->
 <div class="panel-container">
 
+  <!-- PANEL 0: Office Hours Poll -->
+   <!--
+  <a href="https://www.when2meet.com/?34328173-m42BX" class="panel panel0">
+    <div class="panel-title"><span>Vote for Office Hours</span></div>
+  </a>
+  -->
+
   <!-- PANEL 1: SYLLABUS -->
   <a href="https://canvas.okstate.edu/files/24957363" class="panel panel1">
     <div class="panel-title"><span>Syllabus</span></div>
@@ -200,11 +210,16 @@ body {
 <!-- =========================
      BOTTOM HORIZONTAL BANNER
      ========================= -->
-<!--
+
 <div class="bottom-banner">
-  This is a horizontal banner with filler text. Replace with your own text or links.
+  Use 
+  <a href="https://www.when2meet.com/?34328173-m42BX">
+    <span>this link</span>
+  </a>
+   to vote for office hours!
+  
 </div>
--->
+
 
 </body>
 </html>
